@@ -14,4 +14,7 @@
             </div>
         </div>
     </div>
+    <div class="py-12">
+        @livewire('chat-component')
+    </div>
 </x-app-layout>
