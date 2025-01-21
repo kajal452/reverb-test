@@ -33,6 +33,17 @@ new class extends Component
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    
+                    <x-nav-link :href="route('chat-dash')" :active="request()->routeIs('chat-dash')" wire:navigate>
+                        {{ __('Chat List') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('chat-dash')" :active="request()->routeIs('chat-dash')" wire:navigate>
+                        {{-- {{ __('Chat List') }} --}}
+                        @livewire('notification-component')
+                    </x-nav-link>
+        
+
                 </div>
             </div>
 

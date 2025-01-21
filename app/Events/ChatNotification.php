@@ -10,7 +10,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use App\Models\Message;
 
-class MessageSendEvent implements ShouldBroadcastNow
+class ChatNotification implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -35,8 +35,8 @@ class MessageSendEvent implements ShouldBroadcastNow
     {
         // dd($this->message);
         return [
-            new PrivateChannel('chat-channel.' . $this->message->sender_id),
-            new PrivateChannel('chat-channel.' . $this->message->receiver_id),
+            new PrivateChannel('chat-notification.' . $this->message->sender_id),
+            new PrivateChannel('chat-notification.' . $this->message->receiver_id),
         ];
     }
 
